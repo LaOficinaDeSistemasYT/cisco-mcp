@@ -1,0 +1,12 @@
+! Falla de la demo (video 1): aplicar en R2
+configure terminal
+interface GigabitEthernet0/0
+ ip ospf hello-interval 5
+end
+
+! Para quitar la falla (en R2):
+configure terminal
+interface GigabitEthernet0/0
+ no ip ospf hello-interval
+ no ip ospf dead-interval
+end
