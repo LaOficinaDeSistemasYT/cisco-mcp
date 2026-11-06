@@ -1,7 +1,7 @@
 # Claude Code + MCP en routers Cisco (GNS3)
 
 Servidor MCP de solo lectura que permite a Claude Code diagnosticar routers Cisco IOSv por SSH.
-Código del video de La Oficina de Sistemas: [enlace al video]
+Código del video de La Oficina De Sistemas: [enlace al video]
 
 ## Qué hace
 
@@ -38,7 +38,7 @@ claude --permission-mode manual
 
 - El servidor solo acepta comandos `show`.
 - `.claude/settings.json` le quita a Claude Code la terminal y la escritura de archivos, para que solo use las herramientas MCP.
-- El usuario de los routers tiene privilegio 1: aunque alguien consiga la clave, no puede configurar nada.
+- En `routers/` el usuario `claude` tiene privilegio 15. Para que la IA solo pueda mirar aunque consiga la clave, bájalo a privilegio 1 en cada router: `username claude privilege 1 secret Lab-MCP-2026`.
 
 ## Nota sobre Paramiko
 
